@@ -1,6 +1,6 @@
 package org.example;
 
-public class alphaNumeric {
+public class AlphaNumeric {
     public static boolean alphanumeric(String s){
 
         /*if (s.isEmpty()) {

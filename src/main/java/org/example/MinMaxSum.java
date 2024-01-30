@@ -5,17 +5,18 @@ import java.util.List;
 
 public class MinMaxSum {
     public static void miniMaxSum(List<Integer> arr) {
-        Collections.sort(arr);
-        long minSum = 0;
-        long maxSum = 0;
+        long sum = 0;
+        long minVal = Long.MAX_VALUE;
+        long maxVal = Long.MIN_VALUE;
 
-        for (int i = 0; i < arr.size() - 1; i++) {
-            minSum += arr.get(i);
+        for (int val : arr) {
+            sum += val;
+            minVal = Math.min(minVal, val);
+            maxVal = Math.max(maxVal, val);
         }
 
-        for (int i = 1; i < arr.size(); i++) {
-            maxSum += arr.get(i);
-        }
+        long minSum = sum - maxVal;
+        long maxSum = sum - minVal;
 
         System.out.println(minSum + " " + maxSum);
     }
